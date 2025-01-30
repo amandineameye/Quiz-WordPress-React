@@ -3,6 +3,7 @@ import { fetchQuizTags, fetchQuiz } from "./services/wp.service";
 import { useEffect, useState } from "react";
 import Quiz from "./components/quiz/quiz";
 import QuizList from "./components/quizList/quizList";
+import happyIcon from "./assets/happy.svg";
 
 function App() {
 	//Array d'objets avec titre, description, difficulté
@@ -31,7 +32,14 @@ function App() {
 		}
 	}, [quizId]);
 
-	return <>{quizData ? <Quiz {...quizData} /> : <QuizList quizTags={quizTags} onChoose={(id) => setQuizId(id)} />}</>;
-}
+	return (<>
+		<header>
+		 <img src={happyIcon} alt="Happy Icon" width={50} />
+		<h1>Quizzy</h1>	
+		</header>
+		<main>
+		{quizData ? <Quiz {...quizData} /> : <QuizList quizTags={quizTags} onChoose={(id) => setQuizId(id)} />}
+		</main>
+</>)}
 
 export default App;

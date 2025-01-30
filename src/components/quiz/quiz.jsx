@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import * as fuzzball from "fuzzball";
+import style from "./quiz.module.css";
 
 const Quiz = ({ titre, questions }) => {
 	const [index, setIndex] = useState(0);
