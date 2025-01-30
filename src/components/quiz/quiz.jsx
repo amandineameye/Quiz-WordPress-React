@@ -28,9 +28,7 @@ const Quiz = ({ titre, questions }) => {
 
 	const scorePercentage = Math.round((playerScore / quizLength) * 100);
 
-	useEffect(() => {
-		console.log(questions);
-	}, []);
+
 
 	return (
 		<div>

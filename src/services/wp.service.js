@@ -9,6 +9,7 @@ export const fetchQuizTags = async () => {
 			titre: quiz.titre,
 			description: quiz.description,
 			difficulte: quiz.difficulte[0],
+			imageUrl: quiz.image.guid
 		};
 	});
 
@@ -22,8 +23,6 @@ export const fetchQuiz = async (id) => {
 	const cleanResult = {
 		id: result.id,
 		titre: result.titre,
-		description: result.description,
-		difficulte: result.difficulte[0],
 		questions: result.questions.map((question) => {
 			return {
 				id: question.id,
