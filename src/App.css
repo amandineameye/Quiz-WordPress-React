@@ -9,14 +9,9 @@
 	box-sizing: border-box;
 }
 
-body {
+#wp_quiz {
 	width: 100vw;
 	height: 100vh;
-}
-
-#wp_quiz {
-	height: 100%;
-	width: 100%;
 	font-family: "Montserrat", serif;
 	background-color: var(--almost-white);
 }
