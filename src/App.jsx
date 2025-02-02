@@ -39,7 +39,7 @@ function App() {
 		<>
 			<header onClick={goBackHome}>
 				<img className="logo" src={happyIcon} alt="Happy Icon" />
-				<h1 className={headerTitle}>Quizzy</h1>
+				<h1 className="headerTitle">Quizzy</h1>
 			</header>
 			<main>
 				{quizData ? (
