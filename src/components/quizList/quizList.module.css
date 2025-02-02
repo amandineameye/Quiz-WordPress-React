@@ -1,8 +1,9 @@
 .container {
 	display: flex;
-	gap: 1.2rem;
+	gap: 1.3rem;
 	flex-wrap: wrap;
 	padding: 3rem;
+	justify-content: center;
 }
 
 .tag {
