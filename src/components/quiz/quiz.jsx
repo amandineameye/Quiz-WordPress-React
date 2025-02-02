@@ -1,8 +1,9 @@
 import { useState } from "react";
 import * as fuzzball from "fuzzball";
 import style from "./quiz.module.css";
+import ScoreContainer from "../scoreContainer/scoreContainer";
 
-const Quiz = ({ titre, questions }) => {
+const Quiz = ({ titre, questions, goBackHome }) => {
 	const [index, setIndex] = useState(0);
 	const [input, setInput] = useState("");
 	const [playerScore, setPlayerScore] = useState(0);
@@ -29,26 +30,27 @@ const Quiz = ({ titre, questions }) => {
 
 	const scorePercentage = Math.round((playerScore / quizLength) * 100);
 
-
-
 	return (
-		<div>
-			<h2>{titre}</h2>
-
+		<>
 			{finished ? (
-				<p>Le quiz est terminé. Ton score est de {scorePercentage} %.</p>
+				<ScoreContainer percentage={scorePercentage} goBackHome={goBackHome} />
 			) : (
 				<>
-					<p>{questions[index].question}</p>
-					<input
-						type="text"
-						value={input}
-						onChange={(e) => setInput(e.target.value)}
-					></input>{" "}
-					<button onClick={nextQuestion}>Question suivante</button>{" "}
+					<div className={style.questionBox}>
+						<h2 className={style.title}>{titre}</h2>
+						<p className={style.question}>{questions[index].question}</p>
+						<input
+							type="text"
+							value={input}
+							onChange={(e) => setInput(e.target.value)}
+						></input>{" "}
+					</div>
+					<button className={style.validerBtn} onClick={nextQuestion}>
+						Valider
+					</button>
 				</>
 			)}
-		</div>
+		</>
 	);
 };
 

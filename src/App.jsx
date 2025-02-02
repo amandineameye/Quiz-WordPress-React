@@ -13,7 +13,10 @@ function App() {
 	//Data du quiz choisi
 	const [quizData, setQuizData] = useState(null);
 
-	
+	const goBackHome = () => {
+		setQuizData("");
+	};
+
 	useEffect(() => {
 		//Fetch tous les quiz tags
 		fetchQuizTags().then((result) => {
@@ -27,19 +30,26 @@ function App() {
 		if (quizId) {
 			fetchQuiz(quizId).then((result) => {
 				setQuizData(result);
-			console.log("Quiz choisi: ", result);
+				console.log("Quiz choisi: ", result);
 			});
 		}
 	}, [quizId]);
 
-	return (<>
-		<header>
-		 <img src={happyIcon} alt="Happy Icon" width={50} />
-		<h1>Quizzy</h1>	
-		</header>
-		<main>
-		{quizData ? <Quiz {...quizData} /> : <QuizList quizTags={quizTags} onChoose={(id) => setQuizId(id)} />}
-		</main>
-</>)}
+	return (
+		<>
+			<header onClick={goBackHome}>
+				<img className="logo" src={happyIcon} alt="Happy Icon" />
+				<h1>Quizzy</h1>
+			</header>
+			<main>
+				{quizData ? (
+					<Quiz {...quizData} goBackHome={goBackHome} />
+				) : (
+					<QuizList quizTags={quizTags} onChoose={(id) => setQuizId(id)} />
+				)}
+			</main>
+		</>
+	);
+}
 
 export default App;

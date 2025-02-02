@@ -1,0 +1,59 @@
+.questionBox {
+	background-color: #43339e;
+	color: white;
+	padding: 3rem;
+	line-height: 2rem;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 20rem;
+	width: 32rem;
+	position: relative;
+	margin-bottom: 1.5rem;
+
+	input {
+		height: 2.5rem;
+		width: 20rem;
+		border-radius: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: inherit;
+		padding: 1rem;
+		border: none;
+		text-align: center;
+		font-size: 1.2rem;
+	}
+}
+
+.title {
+	position: absolute;
+	margin: auto;
+	padding: 0.6rem 1.2rem;
+	top: -19px;
+	color: #43339e;
+	background-color: white;
+	border-radius: 20px;
+	text-align: center;
+	font-weight: 700;
+}
+
+.question {
+	font-weight: 500;
+	font-size: 1.3rem;
+	text-align: center;
+}
+
+.validerBtn {
+	background-color: #cc3d6a;
+	color: white;
+	border: none;
+	font-size: 1.2rem;
+	width: 32rem;
+	height: 3rem;
+	border-radius: 15px;
+	cursor: pointer;
+	font-family: inherit;
+}
