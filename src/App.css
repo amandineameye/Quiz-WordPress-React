@@ -17,7 +17,7 @@
 }
 
 header {
-	height: 10%;
+	height: 15vh;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -32,12 +32,13 @@ header {
 	}
 
 	.headerTitle {
-		font-size: 20px;
+		font-size: 26px;
+		font-weight: 500;
 	}
 }
 
 main {
-	min-height: 90%;
+	min-height: 86vh;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
