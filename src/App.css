@@ -11,7 +11,7 @@
 
 #wp_quiz {
 	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
 	font-family: "Montserrat", serif;
 	background-color: var(--almost-white);
 }
@@ -29,6 +29,10 @@ header {
 
 	.logo {
 		width: 2.5rem;
+	}
+
+	.headerTitle {
+		font-size: 20px;
 	}
 }
 
